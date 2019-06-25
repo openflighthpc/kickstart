@@ -1,0 +1,11 @@
+virt-install \
+--name sfndiskless \
+--ram 4096 \
+--pxe \
+--disk none \
+--vcpus 2 \
+--os-type linux \
+--os-variant centos7.0 \
+--network bridge=build \
+--graphics vnc,password='sqrt(s*w)',listen=0.0.0.0,port='-1' --noautoconsole \
+--console pty,target_type=serial 

@@ -1,0 +1,12 @@
+virt-install \
+--name sfn \
+--ram 4096 \
+--disk path=/opt/vm/sfn.qcow2,size=80 \
+--vcpus 2 \
+--os-type linux \
+--os-variant centos7.0 \
+--network bridge=build \
+--graphics vnc,password='sqrt(s*w)',listen=0.0.0.0,port='-1' --noautoconsole \
+--console pty,target_type=serial \
+--location 'https://mirror.bytemark.co.uk/centos/7.6.1810/os/x86_64/' \
+--extra-args 'console=tty0 console=ttyS0,115200n8 ks=http://snarl.build.alces-software.com/build/template/centos7/basic.ks' 
